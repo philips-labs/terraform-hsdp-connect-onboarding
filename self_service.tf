@@ -2,7 +2,7 @@ resource "hsdp_iam_group" "connect_self_service" {
   name                  = "CONNECTSS_GROUP_TF"
   roles                 = [hsdp_iam_role.connectss_role.id]
   users                 = concat([], data.hsdp_iam_user.self_service_user.*.id)
-  managing_organization = var.iam_org_id
+  managing_organization = var.onboarding_iam_org_id
 }
 
 resource "hsdp_iam_role" "connectss_role" {
@@ -16,5 +16,5 @@ resource "hsdp_iam_role" "connectss_role" {
     "CONNECTSS-PORTAL-BLR.ALL",
     "CONNECTSS-PORTAL-DBS.ALL"
   ]
-  managing_organization = var.iam_org_id
+  managing_organization = var.onboarding_iam_org_id
 }

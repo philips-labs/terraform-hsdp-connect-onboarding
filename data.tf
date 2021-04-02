@@ -1,5 +1,5 @@
 data "hsdp_iam_org" "org" {
-  organization_id = var.iam_org_id
+  organization_id = var.onboarding_iam_org_id
 }
 
 data "hsdp_iam_user" "admin_user" {

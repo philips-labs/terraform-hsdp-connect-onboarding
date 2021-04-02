@@ -7,7 +7,7 @@ This module creates all necessary IAM groups and roles to support successful onb
 module "connect_onboarding" {
   source = "philips-labs/connect-onboarding/hsdp"
 
-  iam_org_id = var.iam_org_id
+  onboarding_iam_org_id = var.iam_org_id
   provisioning_service_id = "6864c47b-xxx"
   admin_users = ["bosmang"]
   self_service_users = ["bosmang"]
@@ -45,7 +45,7 @@ No Modules.
 |------|-------------|------|---------|:--------:|
 | admin\_user\_ids | List of admin Connect IoT admin users IDs | `list(string)` | `[]` | no |
 | admin\_users | List of admin Connect IoT admin users | `list(string)` | `[]` | no |
-| iam\_org\_id | IAM organization (GUID) you want to onboard to Connect IOT | `string` | n/a | yes |
+| onboarding\_iam\_org\_id | IAM organization (GUID) you want to onboard to Connect IoT | `string` | n/a | yes |
 | provisioning\_service\_id | The IOT Connect provisioning service ID, provided during onboarding by HSDP | `string` | n/a | yes |
 | self\_service\_users | List of users who can use the Connect IoT Self Service UI | `list(string)` | `[]` | no |
 

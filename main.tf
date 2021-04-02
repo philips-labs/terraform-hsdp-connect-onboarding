@@ -2,14 +2,14 @@ resource "hsdp_iam_group" "connect_group" {
   name                  = "DEVICEADMINGROUP_TF"
   roles                 = [hsdp_iam_role.connect_role.id]
   services              = [var.provisioning_service_id]
-  managing_organization = var.iam_org_id
+  managing_organization = var.onboarding_iam_org_id
 }
 
 resource "hsdp_iam_group" "connect_admin_group" {
-  name  = "CONNECT_ADMIN_GROUP_TF"
-  roles = [hsdp_iam_role.connect_admin.id]
-  users = concat([], data.hsdp_iam_user.admin_user.*.id)
-  managing_organization = var.iam_org_id
+  name                  = "CONNECT_ADMIN_GROUP_TF"
+  roles                 = [hsdp_iam_role.connect_admin.id]
+  users                 = concat([], data.hsdp_iam_user.admin_user.*.id)
+  managing_organization = var.onboarding_iam_org_id
 }
 
 resource "hsdp_iam_role" "connect_role" {
@@ -20,7 +20,7 @@ resource "hsdp_iam_role" "connect_role" {
     "GROUP.READ",
     "GROUP.WRITE"
   ]
-  managing_organization = var.iam_org_id
+  managing_organization = var.onboarding_iam_org_id
 }
 
 resource "hsdp_iam_role" "connect_readonly" {
@@ -64,7 +64,7 @@ resource "hsdp_iam_role" "connect_readonly" {
     "MDM-DATABROKERSUBSCRIPTION.READ",
     "MDM-DATATYPE.READ"
   ]
-  managing_organization = var.iam_org_id
+  managing_organization = var.onboarding_iam_org_id
 }
 
 resource "hsdp_iam_role" "connect_admin" {
@@ -178,5 +178,5 @@ resource "hsdp_iam_role" "connect_admin" {
     "NS_PRODUCER.READ",
     "MDM-AUTHENTICATIONMETHOD.CREATE"
   ]
-  managing_organization = var.iam_org_id
+  managing_organization = var.onboarding_iam_org_id
 }
