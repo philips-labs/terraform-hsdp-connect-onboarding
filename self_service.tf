@@ -8,7 +8,13 @@ resource "hsdp_iam_group" "connect_self_service" {
 resource "hsdp_iam_role" "connectss_role" {
   name = "CONNECTSS_ROLE_TF"
   permissions = [
-    "CONNECTSS-PORTAL-GLOBAL.ALL"
+    "CONNECTSS-PORTAL-GLOBAL.ALL",
+    "CONNECTSS-PORTAL-PROVCORE.ALL",
+    "CONNECTSS-PORTAL-PROVCLIENT.ALL",
+    "CONNECTSS-PORTAL-DSC.ALL",
+    "CONNECTSS-PORTAL-FWS.ALL",
+    "CONNECTSS-PORTAL-BLR.ALL",
+    "CONNECTSS-PORTAL-DBS.ALL"
   ]
   managing_organization = var.iam_org_id
 }
