@@ -1,7 +1,7 @@
 <img src="https://cdn.rawgit.com/hashicorp/terraform-website/master/content/source/assets/images/logo-hashicorp.svg" width="500px">
 
 # HSDP Connect IoT onboarding module
-This module prepares all necessary IAM groups and roles to support succesful onbaording onto the HSDP Connect IoT services. Example usage:
+This module creates all necessary IAM groups and roles to support succesful onboarding onto the HSDP Connect IoT services. Example usage:
 
 ```hcl
 module "connect_onboarding" {
