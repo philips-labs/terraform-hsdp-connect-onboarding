@@ -1,7 +1,8 @@
 resource "hsdp_iam_group" "connect_group" {
-  name     = "DEVICEADMINGROUP_TF"
-  roles    = [hsdp_iam_role.connect_role.id]
-  services = [var.connect_prov_service_id]
+  name                  = "DEVICEADMINGROUP_TF"
+  roles                 = [hsdp_iam_role.connect_role.id]
+  services              = [var.provisioning_service_id]
+  users                 = concat([], data.hsdp_iam_user.user.*.id)
   managing_organization = var.iam_org_id
 }
 

@@ -7,11 +7,29 @@ variable "iam_org_id" {
   }
 }
 
-variable "connect_prov_service_id" {
+variable "provisioning_service_id" {
   description = "The IOT Connect provisioning service ID, provided during onboarding by HSDP"
   type        = string
   validation {
-    condition     = can(regex("^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$", var.connect_prov_service_id))
-    error_message = "The connect_prov_service_id value must be a valid GUID."
+    condition     = can(regex("^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$", var.provisioning_service_id))
+    error_message = "The provisioning_service_id value must be a valid GUID."
   }
+}
+
+variable "admin_users" {
+  description = "List of admin Connect IoT admin users"
+  type        = list(string)
+  default     = []
+}
+
+variable "admin_user_ids" {
+  description = "List of admin Connect IoT admin users IDs"
+  type        = list(string)
+  default     = []
+}
+
+variable "self_service_users" {
+  description = "List of users who can use the Connect IoT Self Service UI"
+  type        = list(string)
+  default     = []
 }
