@@ -2,7 +2,13 @@ resource "hsdp_iam_group" "connect_group" {
   name                  = "DEVICEADMINGROUP_TF"
   roles                 = [hsdp_iam_role.connect_role.id]
   services              = [var.provisioning_service_id]
-  users                 = concat([], data.hsdp_iam_user.user.*.id)
+  managing_organization = var.iam_org_id
+}
+
+resource "hsdp_iam_group" "connect_admin_group" {
+  name  = "CONNECT_ADMIN_GROUP_TF"
+  roles = [hsdp_iam_role.connect_admin.id]
+  users = concat([], data.hsdp_iam_user.admin_user.*.id)
   managing_organization = var.iam_org_id
 }
 
@@ -165,7 +171,12 @@ resource "hsdp_iam_role" "connect_admin" {
     "MDM-DATATYPE.CREATE",
     "MDM-DATATYPE.READ",
     "MDM-DATATYPE.UPDATE",
-    "MDM-DATATYPE.DELETE"
+    "MDM-DATATYPE.DELETE",
+
+    # Other
+    "NS_TOPIC.READ",
+    "NS_PRODUCER.READ",
+    "MDM-AUTHENTICATIONMETHOD.CREATE"
   ]
   managing_organization = var.iam_org_id
 }
