@@ -11,13 +11,21 @@ variable "provisioning_service_id" {
   description = "The Connect IoT provisioning service ID, provided during onboarding by HSDP"
   type        = string
   validation {
-    condition     = can(regex("^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$", var.provisioning_service_id))
+    condition     = can(regex("^$|^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$", var.provisioning_service_id))
     error_message = "The provisioning_service_id value must be a valid GUID."
   }
+  default = ""
 }
 
 variable "admin_users" {
   description = "List of admin Connect IoT admin users"
+  type        = list(string)
+  default     = []
+}
+
+
+variable "admin_service_ids" {
+  description = "List of service credentials for Connect IoT admin"
   type        = list(string)
   default     = []
 }
