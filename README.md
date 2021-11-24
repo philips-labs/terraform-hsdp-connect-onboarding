@@ -6,9 +6,8 @@ module "connect_onboarding" {
   source = "philips-labs/connect-onboarding/hsdp"
 
   onboarding_iam_org_id = var.iam_org_id
-  provisioning_service_id = "6864c47b-xxx"
-  admin_users = ["bosmang"]
-  self_service_users = ["bosmang"]
+  admin_users           = ["bosmang"]
+  self_service_users    = ["bosmang"]
 }
 ```
 
