@@ -1,5 +1,3 @@
-<img src="https://cdn.rawgit.com/hashicorp/terraform-website/master/content/source/assets/images/logo-hashicorp.svg" width="500px">
-
 # HSDP Connect IoT onboarding module
 This module creates all necessary IAM groups and roles to support successful onboarding onto the HSDP Connect IoT services. Example usage:
 
