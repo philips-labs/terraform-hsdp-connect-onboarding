@@ -11,17 +11,6 @@ module "connect_onboarding" {
 }
 ```
 
-<!--- BEGIN_TF_DOCS --->
-<!--- END_TF_DOCS --->
-
-# Contact / Getting help
-
-Post your questions on the `#terraform` HSDP Slack channel
-
-# License
-
-License is MIT
-
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -69,3 +58,12 @@ No modules.
 
 No outputs.
 <!-- END_TF_DOCS -->
+
+
+# Contact / Getting help
+
+Post your questions on the `#terraform` HSDP Slack channel
+
+# License
+
+License is MIT
