@@ -25,13 +25,13 @@ module "connect_onboarding" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_hsdp"></a> [hsdp](#requirement\_hsdp) | >= 0.14.1 |
+| <a name="requirement_hsdp"></a> [hsdp](#requirement\_hsdp) | >= 0.63.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_hsdp"></a> [hsdp](#provider\_hsdp) | >= 0.14.1 |
+| <a name="provider_hsdp"></a> [hsdp](#provider\_hsdp) | >= 0.63.0 |
 
 ## Modules
 
